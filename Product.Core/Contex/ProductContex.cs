@@ -23,7 +23,7 @@ namespace Products.Core.Contex
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=product_tracker;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=products_tracker;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
             base.OnConfiguring(optionsBuilder);
         }
     }

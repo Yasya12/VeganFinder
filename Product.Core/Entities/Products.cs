@@ -20,7 +20,9 @@ namespace Product.Core.Entities
         public string review { get; set; }
         public char verify { get; set; }
         public Company company { get; set; }
+        public Guid companyId { get; set; }
         public Category category { get; set; }
+        public Guid categoryId { get; set; }
 
     }
 }

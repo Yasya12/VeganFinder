@@ -12,7 +12,7 @@ using Products.Core.Contex;
 namespace Product.Core.Migrations
 {
     [DbContext(typeof(ProductContex))]
-    [Migration("20230615124712_Init")]
+    [Migration("20230615142506_Init")]
     partial class Init
     {
         /// <inheritdoc />
