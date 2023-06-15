@@ -1,6 +1,6 @@
 ﻿namespace ProductWinAppForm
 {
-    partial class Form1
+    partial class PTrackerAdmin
     {
         /// <summary>
         ///  Required designer variable.

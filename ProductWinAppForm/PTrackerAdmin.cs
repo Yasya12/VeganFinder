@@ -8,11 +8,11 @@ using System.Windows.Forms.VisualStyles;
 
 namespace ProductWinAppForm
 {
-    public partial class Form1 : Form
+    public partial class PTrackerAdmin : Form
     {
         private readonly ProductContex _context;
         private int helpCounter = 0;
-        public Form1()
+        public PTrackerAdmin()
         {
             InitializeComponent();
             _context = new ProductContex();
