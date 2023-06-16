@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Product.Core.Entities;
 using Product.Repositories;
 using Products.Core.Contex;
@@ -16,11 +17,14 @@ namespace ProductWinAppForm
 {
     public partial class PTrackerClient : Form
     {
+
+        private readonly ProductContex _context;
         public PTrackerClient()
         {
             InitializeComponent();
             SetAutoCompleteTextbox(textBoxSearch);
             //FillComboBoxFProducts();
+            _context = new ProductContex();
         }
         private void SetAutoCompleteTextbox(System.Windows.Forms.TextBox textBox)
         {
@@ -146,6 +150,63 @@ namespace ProductWinAppForm
                 MessageBox.Show("Error");
             }
 
+        }
+
+        private void buttonCAdd_Click(object sender, EventArgs e)
+        {
+            if (comboBoxPCompany.SelectedItem == null || comboBoxPCategory.SelectedItem == null ||
+              string.IsNullOrEmpty(textBoxPName.Text) || string.IsNullOrEmpty(textBoxPIngredients.Text) ||
+              string.IsNullOrEmpty(textBoxPPrice.Text) || string.IsNullOrEmpty(textBoxPReview.Text))
+            {
+                MessageBox.Show("Заповніть поля", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string companyName = comboBoxPCompany.SelectedItem.ToString();
+            string categoryName = comboBoxPCategory.SelectedItem.ToString();
+            float pricecheck;
+
+            var repositoryProducts = new Repository<Xavchik, Guid>(_context);
+            var repositoryCompanies = new Repository<Company, Guid>(_context);
+            var repositoryCategories = new Repository<Category, Guid>(_context);
+
+            var CompanyIdSearch = repositoryCompanies.GetAll().FirstOrDefault(company => company.name == companyName).Id;
+            var CategoryIdSearch = repositoryCategories.GetAll().FirstOrDefault(category => category.name == categoryName).Id;
+
+            
+                if (float.TryParse(textBoxPPrice.Text, out pricecheck))
+                {
+                    repositoryProducts.Create(new Xavchik
+                    {
+                        name = textBoxPName.Text,
+                        ingredients = textBoxPIngredients.Text,
+                        price = pricecheck,
+                        review = textBoxPReview.Text,
+                        verify = 'F',
+                        companyId = CompanyIdSearch,
+                        categoryId = CategoryIdSearch
+                    });
+                    clearFieldProduct();
+                    /* SetFalseEnable();*/
+                }
+                else
+                {
+                    MessageBox.Show("Invalid price format!");
+                }
+        }
+        private void clearFieldProduct()
+        {
+            textBoxPName.Text = string.Empty;
+            textBoxPIngredients.Text = string.Empty;
+            textBoxPPrice.Text = string.Empty;
+            textBoxPReview.Text = string.Empty;
+            comboBoxPCompany.SelectedIndex = -1;
+            comboBoxPCategory.SelectedIndex = -1;
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            clearFieldProduct();
         }
     }
 }

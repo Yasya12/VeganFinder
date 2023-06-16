@@ -38,15 +38,30 @@
             this.buttonProducts = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.listBoxProducts = new System.Windows.Forms.ListBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageAdd = new System.Windows.Forms.TabPage();
+            this.labelCName = new System.Windows.Forms.Label();
+            this.labelCPrice = new System.Windows.Forms.Label();
+            this.labelCIng = new System.Windows.Forms.Label();
+            this.labelCReview = new System.Windows.Forms.Label();
+            this.buttonCAdd = new System.Windows.Forms.Button();
+            this.comboBoxPCategory = new System.Windows.Forms.ComboBox();
+            this.comboBoxPCompany = new System.Windows.Forms.ComboBox();
+            this.labelCCompany = new System.Windows.Forms.Label();
+            this.labelCCategory = new System.Windows.Forms.Label();
+            this.textBoxPReview = new System.Windows.Forms.TextBox();
+            this.textBoxPPrice = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxPName = new System.Windows.Forms.TextBox();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageFind.SuspendLayout();
+            this.tabPageAdd.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPageFind);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPageAdd);
             this.tabControl1.Location = new System.Drawing.Point(2, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -134,6 +149,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(148, 27);
             this.textBoxSearch.TabIndex = 1;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
             // 
             // listBoxProducts
             // 
@@ -146,15 +162,153 @@
             this.listBoxProducts.Visible = false;
             this.listBoxProducts.SelectedIndexChanged += new System.EventHandler(this.listBoxProducts_SelectedIndexChanged);
             // 
-            // tabPage2
+            // tabPageAdd
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(789, 414);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageAdd.Controls.Add(this.buttonClear);
+            this.tabPageAdd.Controls.Add(this.textBoxPReview);
+            this.tabPageAdd.Controls.Add(this.textBoxPPrice);
+            this.tabPageAdd.Controls.Add(this.textBox1);
+            this.tabPageAdd.Controls.Add(this.textBoxPName);
+            this.tabPageAdd.Controls.Add(this.comboBoxPCategory);
+            this.tabPageAdd.Controls.Add(this.comboBoxPCompany);
+            this.tabPageAdd.Controls.Add(this.labelCCompany);
+            this.tabPageAdd.Controls.Add(this.labelCCategory);
+            this.tabPageAdd.Controls.Add(this.buttonCAdd);
+            this.tabPageAdd.Controls.Add(this.labelCReview);
+            this.tabPageAdd.Controls.Add(this.labelCIng);
+            this.tabPageAdd.Controls.Add(this.labelCPrice);
+            this.tabPageAdd.Controls.Add(this.labelCName);
+            this.tabPageAdd.Location = new System.Drawing.Point(4, 29);
+            this.tabPageAdd.Name = "tabPageAdd";
+            this.tabPageAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageAdd.Size = new System.Drawing.Size(789, 414);
+            this.tabPageAdd.TabIndex = 1;
+            this.tabPageAdd.Text = "Add";
+            this.tabPageAdd.UseVisualStyleBackColor = true;
+            // 
+            // labelCName
+            // 
+            this.labelCName.AutoSize = true;
+            this.labelCName.Location = new System.Drawing.Point(31, 22);
+            this.labelCName.Name = "labelCName";
+            this.labelCName.Size = new System.Drawing.Size(49, 20);
+            this.labelCName.TabIndex = 0;
+            this.labelCName.Text = "Name";
+            // 
+            // labelCPrice
+            // 
+            this.labelCPrice.AutoSize = true;
+            this.labelCPrice.Location = new System.Drawing.Point(201, 97);
+            this.labelCPrice.Name = "labelCPrice";
+            this.labelCPrice.Size = new System.Drawing.Size(41, 20);
+            this.labelCPrice.TabIndex = 1;
+            this.labelCPrice.Text = "Price";
+            // 
+            // labelCIng
+            // 
+            this.labelCIng.AutoSize = true;
+            this.labelCIng.Location = new System.Drawing.Point(31, 86);
+            this.labelCIng.Name = "labelCIng";
+            this.labelCIng.Size = new System.Drawing.Size(83, 20);
+            this.labelCIng.TabIndex = 2;
+            this.labelCIng.Text = "Ingredients";
+            // 
+            // labelCReview
+            // 
+            this.labelCReview.AutoSize = true;
+            this.labelCReview.Location = new System.Drawing.Point(31, 174);
+            this.labelCReview.Name = "labelCReview";
+            this.labelCReview.Size = new System.Drawing.Size(56, 20);
+            this.labelCReview.TabIndex = 4;
+            this.labelCReview.Text = "Review";
+            // 
+            // buttonCAdd
+            // 
+            this.buttonCAdd.Location = new System.Drawing.Point(363, 39);
+            this.buttonCAdd.Name = "buttonCAdd";
+            this.buttonCAdd.Size = new System.Drawing.Size(99, 45);
+            this.buttonCAdd.TabIndex = 5;
+            this.buttonCAdd.Text = "Add";
+            this.buttonCAdd.UseVisualStyleBackColor = true;
+            this.buttonCAdd.Click += new System.EventHandler(this.buttonCAdd_Click);
+            // 
+            // comboBoxPCategory
+            // 
+            this.comboBoxPCategory.FormattingEnabled = true;
+            this.comboBoxPCategory.Location = new System.Drawing.Point(31, 358);
+            this.comboBoxPCategory.Name = "comboBoxPCategory";
+            this.comboBoxPCategory.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxPCategory.TabIndex = 32;
+            // 
+            // comboBoxPCompany
+            // 
+            this.comboBoxPCompany.FormattingEnabled = true;
+            this.comboBoxPCompany.Location = new System.Drawing.Point(31, 299);
+            this.comboBoxPCompany.Name = "comboBoxPCompany";
+            this.comboBoxPCompany.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxPCompany.TabIndex = 31;
+            // 
+            // labelCCompany
+            // 
+            this.labelCCompany.AutoSize = true;
+            this.labelCCompany.Location = new System.Drawing.Point(31, 276);
+            this.labelCCompany.Name = "labelCCompany";
+            this.labelCCompany.Size = new System.Drawing.Size(72, 20);
+            this.labelCCompany.TabIndex = 30;
+            this.labelCCompany.Text = "Company";
+            // 
+            // labelCCategory
+            // 
+            this.labelCCategory.AutoSize = true;
+            this.labelCCategory.Location = new System.Drawing.Point(31, 330);
+            this.labelCCategory.Name = "labelCCategory";
+            this.labelCCategory.Size = new System.Drawing.Size(69, 20);
+            this.labelCCategory.TabIndex = 29;
+            this.labelCCategory.Text = "Category";
+            // 
+            // textBoxPReview
+            // 
+            this.textBoxPReview.Location = new System.Drawing.Point(31, 199);
+            this.textBoxPReview.Multiline = true;
+            this.textBoxPReview.Name = "textBoxPReview";
+            this.textBoxPReview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxPReview.Size = new System.Drawing.Size(125, 71);
+            this.textBoxPReview.TabIndex = 36;
+            // 
+            // textBoxPPrice
+            // 
+            this.textBoxPPrice.Location = new System.Drawing.Point(201, 120);
+            this.textBoxPPrice.Name = "textBoxPPrice";
+            this.textBoxPPrice.Size = new System.Drawing.Size(95, 27);
+            this.textBoxPPrice.TabIndex = 35;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(31, 109);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox1.Size = new System.Drawing.Size(125, 62);
+            this.textBox1.TabIndex = 34;
+            // 
+            // textBoxPName
+            // 
+            this.textBoxPName.Location = new System.Drawing.Point(31, 39);
+            this.textBoxPName.Multiline = true;
+            this.textBoxPName.Name = "textBoxPName";
+            this.textBoxPName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxPName.Size = new System.Drawing.Size(243, 45);
+            this.textBoxPName.TabIndex = 33;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(363, 120);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(99, 45);
+            this.buttonClear.TabIndex = 37;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // PTrackerClient
             // 
@@ -167,6 +321,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPageFind.ResumeLayout(false);
             this.tabPageFind.PerformLayout();
+            this.tabPageAdd.ResumeLayout(false);
+            this.tabPageAdd.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,7 +338,21 @@
         private Button buttonProducts;
         private TextBox textBoxSearch;
         private ListBox listBoxProducts;
-        private TabPage tabPage2;
+        private TabPage tabPageAdd;
         private ComboBox comboBoxFProducts;
+        private Label labelCReview;
+        private Label labelCIng;
+        private Label labelCPrice;
+        private Label labelCName;
+        private Button buttonCAdd;
+        private ComboBox comboBoxPCategory;
+        private ComboBox comboBoxPCompany;
+        private Label labelCCompany;
+        private Label labelCCategory;
+        private TextBox textBoxPReview;
+        private TextBox textBoxPPrice;
+        private TextBox textBox1;
+        private TextBox textBoxPName;
+        private Button buttonClear;
     }
 }
