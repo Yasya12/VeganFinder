@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageFind = new System.Windows.Forms.TabPage();
+            this.comboBoxFProducts = new System.Windows.Forms.ComboBox();
             this.labelRReview = new System.Windows.Forms.Label();
             this.labelPIngredient = new System.Windows.Forms.Label();
             this.textBoxRReview = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.listBoxProducts = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBoxFProducts = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPageFind.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +71,14 @@
             this.tabPageFind.Text = "Find";
             this.tabPageFind.UseVisualStyleBackColor = true;
             // 
+            // comboBoxFProducts
+            // 
+            this.comboBoxFProducts.FormattingEnabled = true;
+            this.comboBoxFProducts.Location = new System.Drawing.Point(26, 83);
+            this.comboBoxFProducts.Name = "comboBoxFProducts";
+            this.comboBoxFProducts.Size = new System.Drawing.Size(151, 28);
+            this.comboBoxFProducts.TabIndex = 7;
+            // 
             // labelRReview
             // 
             this.labelRReview.AutoSize = true;
@@ -79,6 +87,7 @@
             this.labelRReview.Size = new System.Drawing.Size(50, 20);
             this.labelRReview.TabIndex = 6;
             this.labelRReview.Text = "Відгук";
+            this.labelRReview.Visible = false;
             // 
             // labelPIngredient
             // 
@@ -88,14 +97,17 @@
             this.labelPIngredient.Size = new System.Drawing.Size(49, 20);
             this.labelPIngredient.TabIndex = 5;
             this.labelPIngredient.Text = "Склад";
+            this.labelPIngredient.Visible = false;
             // 
             // textBoxRReview
             // 
             this.textBoxRReview.Location = new System.Drawing.Point(494, 273);
             this.textBoxRReview.Multiline = true;
             this.textBoxRReview.Name = "textBoxRReview";
+            this.textBoxRReview.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxRReview.Size = new System.Drawing.Size(259, 118);
             this.textBoxRReview.TabIndex = 4;
+            this.textBoxRReview.Visible = false;
             // 
             // textBoxPIngredients
             // 
@@ -104,6 +116,7 @@
             this.textBoxPIngredients.Name = "textBoxPIngredients";
             this.textBoxPIngredients.Size = new System.Drawing.Size(259, 118);
             this.textBoxPIngredients.TabIndex = 3;
+            this.textBoxPIngredients.Visible = false;
             // 
             // buttonProducts
             // 
@@ -130,6 +143,8 @@
             this.listBoxProducts.Name = "listBoxProducts";
             this.listBoxProducts.Size = new System.Drawing.Size(378, 284);
             this.listBoxProducts.TabIndex = 0;
+            this.listBoxProducts.Visible = false;
+            this.listBoxProducts.SelectedIndexChanged += new System.EventHandler(this.listBoxProducts_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -140,14 +155,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxFProducts
-            // 
-            this.comboBoxFProducts.FormattingEnabled = true;
-            this.comboBoxFProducts.Location = new System.Drawing.Point(26, 83);
-            this.comboBoxFProducts.Name = "comboBoxFProducts";
-            this.comboBoxFProducts.Size = new System.Drawing.Size(151, 28);
-            this.comboBoxFProducts.TabIndex = 7;
             // 
             // PTrackerClient
             // 
