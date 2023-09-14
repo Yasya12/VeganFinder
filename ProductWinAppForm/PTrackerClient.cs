@@ -25,6 +25,8 @@ namespace ProductWinAppForm
             SetAutoCompleteTextbox(textBoxSearch);
             //FillComboBoxFProducts();
             _context = new ProductContex();
+            updateCompanyCB();
+            updateCategoryCB();
         }
         private void SetAutoCompleteTextbox(System.Windows.Forms.TextBox textBox)
         {
@@ -194,10 +196,31 @@ namespace ProductWinAppForm
                     MessageBox.Show("Invalid price format!");
                 }
         }
+
+        private void updateCompanyCB()
+        {
+            var repository = new Repository<Company, Guid>(new ProductContex());
+            comboBoxPCompany.Items.Clear();
+
+            foreach (var company in repository.GetAll())
+            {
+                comboBoxPCompany.Items.Add($"{company.name}");
+            }
+        }
+        private void updateCategoryCB()
+        {
+            var repository = new Repository<Category, Guid>(new ProductContex());
+            comboBoxPCategory.Items.Clear();
+
+            foreach (var category in repository.GetAll())
+            {
+                comboBoxPCategory.Items.Add($"{category.name}");
+            }
+        }
         private void clearFieldProduct()
         {
             textBoxPName.Text = string.Empty;
-            textBoxPIngredients.Text = string.Empty;
+            textBoxIngre.Text = string.Empty;
             textBoxPPrice.Text = string.Empty;
             textBoxPReview.Text = string.Empty;
             comboBoxPCompany.SelectedIndex = -1;

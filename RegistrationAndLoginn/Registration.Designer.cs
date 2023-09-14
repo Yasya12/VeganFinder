@@ -61,6 +61,7 @@
             // 
             this.textBoxRPassword.Location = new System.Drawing.Point(203, 109);
             this.textBoxRPassword.Name = "textBoxRPassword";
+            this.textBoxRPassword.PasswordChar = '*';
             this.textBoxRPassword.Size = new System.Drawing.Size(125, 27);
             this.textBoxRPassword.TabIndex = 9;
             // 
@@ -93,6 +94,7 @@
             // 
             this.textBoxRCPassword.Location = new System.Drawing.Point(203, 167);
             this.textBoxRCPassword.Name = "textBoxRCPassword";
+            this.textBoxRCPassword.PasswordChar = '*';
             this.textBoxRCPassword.Size = new System.Drawing.Size(125, 27);
             this.textBoxRCPassword.TabIndex = 12;
             // 

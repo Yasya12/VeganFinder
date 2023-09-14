@@ -39,20 +39,20 @@
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.listBoxProducts = new System.Windows.Forms.ListBox();
             this.tabPageAdd = new System.Windows.Forms.TabPage();
-            this.labelCName = new System.Windows.Forms.Label();
-            this.labelCPrice = new System.Windows.Forms.Label();
-            this.labelCIng = new System.Windows.Forms.Label();
-            this.labelCReview = new System.Windows.Forms.Label();
-            this.buttonCAdd = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.textBoxPReview = new System.Windows.Forms.TextBox();
+            this.textBoxPPrice = new System.Windows.Forms.TextBox();
+            this.textBoxIngre = new System.Windows.Forms.TextBox();
+            this.textBoxPName = new System.Windows.Forms.TextBox();
             this.comboBoxPCategory = new System.Windows.Forms.ComboBox();
             this.comboBoxPCompany = new System.Windows.Forms.ComboBox();
             this.labelCCompany = new System.Windows.Forms.Label();
             this.labelCCategory = new System.Windows.Forms.Label();
-            this.textBoxPReview = new System.Windows.Forms.TextBox();
-            this.textBoxPPrice = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBoxPName = new System.Windows.Forms.TextBox();
-            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonCAdd = new System.Windows.Forms.Button();
+            this.labelCReview = new System.Windows.Forms.Label();
+            this.labelCIng = new System.Windows.Forms.Label();
+            this.labelCPrice = new System.Windows.Forms.Label();
+            this.labelCName = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageFind.SuspendLayout();
             this.tabPageAdd.SuspendLayout();
@@ -93,6 +93,7 @@
             this.comboBoxFProducts.Name = "comboBoxFProducts";
             this.comboBoxFProducts.Size = new System.Drawing.Size(151, 28);
             this.comboBoxFProducts.TabIndex = 7;
+            this.comboBoxFProducts.Visible = false;
             // 
             // labelRReview
             // 
@@ -167,7 +168,7 @@
             this.tabPageAdd.Controls.Add(this.buttonClear);
             this.tabPageAdd.Controls.Add(this.textBoxPReview);
             this.tabPageAdd.Controls.Add(this.textBoxPPrice);
-            this.tabPageAdd.Controls.Add(this.textBox1);
+            this.tabPageAdd.Controls.Add(this.textBoxIngre);
             this.tabPageAdd.Controls.Add(this.textBoxPName);
             this.tabPageAdd.Controls.Add(this.comboBoxPCategory);
             this.tabPageAdd.Controls.Add(this.comboBoxPCompany);
@@ -186,51 +187,49 @@
             this.tabPageAdd.Text = "Add";
             this.tabPageAdd.UseVisualStyleBackColor = true;
             // 
-            // labelCName
+            // buttonClear
             // 
-            this.labelCName.AutoSize = true;
-            this.labelCName.Location = new System.Drawing.Point(31, 22);
-            this.labelCName.Name = "labelCName";
-            this.labelCName.Size = new System.Drawing.Size(49, 20);
-            this.labelCName.TabIndex = 0;
-            this.labelCName.Text = "Name";
+            this.buttonClear.Location = new System.Drawing.Point(363, 120);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(99, 45);
+            this.buttonClear.TabIndex = 37;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // labelCPrice
+            // textBoxPReview
             // 
-            this.labelCPrice.AutoSize = true;
-            this.labelCPrice.Location = new System.Drawing.Point(201, 97);
-            this.labelCPrice.Name = "labelCPrice";
-            this.labelCPrice.Size = new System.Drawing.Size(41, 20);
-            this.labelCPrice.TabIndex = 1;
-            this.labelCPrice.Text = "Price";
+            this.textBoxPReview.Location = new System.Drawing.Point(31, 199);
+            this.textBoxPReview.Multiline = true;
+            this.textBoxPReview.Name = "textBoxPReview";
+            this.textBoxPReview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxPReview.Size = new System.Drawing.Size(125, 71);
+            this.textBoxPReview.TabIndex = 36;
             // 
-            // labelCIng
+            // textBoxPPrice
             // 
-            this.labelCIng.AutoSize = true;
-            this.labelCIng.Location = new System.Drawing.Point(31, 86);
-            this.labelCIng.Name = "labelCIng";
-            this.labelCIng.Size = new System.Drawing.Size(83, 20);
-            this.labelCIng.TabIndex = 2;
-            this.labelCIng.Text = "Ingredients";
+            this.textBoxPPrice.Location = new System.Drawing.Point(201, 120);
+            this.textBoxPPrice.Name = "textBoxPPrice";
+            this.textBoxPPrice.Size = new System.Drawing.Size(95, 27);
+            this.textBoxPPrice.TabIndex = 35;
             // 
-            // labelCReview
+            // textBoxIngre
             // 
-            this.labelCReview.AutoSize = true;
-            this.labelCReview.Location = new System.Drawing.Point(31, 174);
-            this.labelCReview.Name = "labelCReview";
-            this.labelCReview.Size = new System.Drawing.Size(56, 20);
-            this.labelCReview.TabIndex = 4;
-            this.labelCReview.Text = "Review";
+            this.textBoxIngre.Location = new System.Drawing.Point(31, 109);
+            this.textBoxIngre.Multiline = true;
+            this.textBoxIngre.Name = "textBoxIngre";
+            this.textBoxIngre.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxIngre.Size = new System.Drawing.Size(125, 62);
+            this.textBoxIngre.TabIndex = 34;
             // 
-            // buttonCAdd
+            // textBoxPName
             // 
-            this.buttonCAdd.Location = new System.Drawing.Point(363, 39);
-            this.buttonCAdd.Name = "buttonCAdd";
-            this.buttonCAdd.Size = new System.Drawing.Size(99, 45);
-            this.buttonCAdd.TabIndex = 5;
-            this.buttonCAdd.Text = "Add";
-            this.buttonCAdd.UseVisualStyleBackColor = true;
-            this.buttonCAdd.Click += new System.EventHandler(this.buttonCAdd_Click);
+            this.textBoxPName.Location = new System.Drawing.Point(31, 39);
+            this.textBoxPName.Multiline = true;
+            this.textBoxPName.Name = "textBoxPName";
+            this.textBoxPName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxPName.Size = new System.Drawing.Size(243, 45);
+            this.textBoxPName.TabIndex = 33;
             // 
             // comboBoxPCategory
             // 
@@ -266,49 +265,51 @@
             this.labelCCategory.TabIndex = 29;
             this.labelCCategory.Text = "Category";
             // 
-            // textBoxPReview
+            // buttonCAdd
             // 
-            this.textBoxPReview.Location = new System.Drawing.Point(31, 199);
-            this.textBoxPReview.Multiline = true;
-            this.textBoxPReview.Name = "textBoxPReview";
-            this.textBoxPReview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxPReview.Size = new System.Drawing.Size(125, 71);
-            this.textBoxPReview.TabIndex = 36;
+            this.buttonCAdd.Location = new System.Drawing.Point(363, 39);
+            this.buttonCAdd.Name = "buttonCAdd";
+            this.buttonCAdd.Size = new System.Drawing.Size(99, 45);
+            this.buttonCAdd.TabIndex = 5;
+            this.buttonCAdd.Text = "Add";
+            this.buttonCAdd.UseVisualStyleBackColor = true;
+            this.buttonCAdd.Click += new System.EventHandler(this.buttonCAdd_Click);
             // 
-            // textBoxPPrice
+            // labelCReview
             // 
-            this.textBoxPPrice.Location = new System.Drawing.Point(201, 120);
-            this.textBoxPPrice.Name = "textBoxPPrice";
-            this.textBoxPPrice.Size = new System.Drawing.Size(95, 27);
-            this.textBoxPPrice.TabIndex = 35;
+            this.labelCReview.AutoSize = true;
+            this.labelCReview.Location = new System.Drawing.Point(31, 174);
+            this.labelCReview.Name = "labelCReview";
+            this.labelCReview.Size = new System.Drawing.Size(56, 20);
+            this.labelCReview.TabIndex = 4;
+            this.labelCReview.Text = "Review";
             // 
-            // textBox1
+            // labelCIng
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 109);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(125, 62);
-            this.textBox1.TabIndex = 34;
+            this.labelCIng.AutoSize = true;
+            this.labelCIng.Location = new System.Drawing.Point(31, 86);
+            this.labelCIng.Name = "labelCIng";
+            this.labelCIng.Size = new System.Drawing.Size(83, 20);
+            this.labelCIng.TabIndex = 2;
+            this.labelCIng.Text = "Ingredients";
             // 
-            // textBoxPName
+            // labelCPrice
             // 
-            this.textBoxPName.Location = new System.Drawing.Point(31, 39);
-            this.textBoxPName.Multiline = true;
-            this.textBoxPName.Name = "textBoxPName";
-            this.textBoxPName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxPName.Size = new System.Drawing.Size(243, 45);
-            this.textBoxPName.TabIndex = 33;
+            this.labelCPrice.AutoSize = true;
+            this.labelCPrice.Location = new System.Drawing.Point(201, 97);
+            this.labelCPrice.Name = "labelCPrice";
+            this.labelCPrice.Size = new System.Drawing.Size(41, 20);
+            this.labelCPrice.TabIndex = 1;
+            this.labelCPrice.Text = "Price";
             // 
-            // buttonClear
+            // labelCName
             // 
-            this.buttonClear.Location = new System.Drawing.Point(363, 120);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(99, 45);
-            this.buttonClear.TabIndex = 37;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.labelCName.AutoSize = true;
+            this.labelCName.Location = new System.Drawing.Point(31, 22);
+            this.labelCName.Name = "labelCName";
+            this.labelCName.Size = new System.Drawing.Size(49, 20);
+            this.labelCName.TabIndex = 0;
+            this.labelCName.Text = "Name";
             // 
             // PTrackerClient
             // 
@@ -351,7 +352,7 @@
         private Label labelCCategory;
         private TextBox textBoxPReview;
         private TextBox textBoxPPrice;
-        private TextBox textBox1;
+        private TextBox textBoxIngre;
         private TextBox textBoxPName;
         private Button buttonClear;
     }
